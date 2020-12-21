@@ -1,0 +1,95 @@
+<div class="page-wrapper">
+	<!-- header index -->
+	<app-db-header></app-db-header>
+	<!-- header index -->
+
+    <div class="home_page_wrapper dashboard_wrapper">
+    	<section class="db_sec_comon prof_sec">
+         <div class="custom_container">
+            <div class="wrap_dash_sec edit_prof_page"> <!-- page classes -->
+                <div class="row">
+                    <div class="col-sm-3">
+                        <div class="sidebar_wrap card_shd">
+                            <!--  -->
+                            <app-db-sidebar></app-db-sidebar>
+                            <!--  -->
+                        </div>
+                    </div>
+                    <div class="col-sm-9">
+                        <div class="mainside_wrap">
+                            <!--  -->
+                            <div class="page_head">
+                                <h4>Edit Profile</h4>
+                                <h6>Lorem ipsum dolor sit amet, consectetur do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h6>
+                            </div>
+                            <div class="main_cntnt_dash">
+                                <div class="card_shd cnt_skamper">
+                                    <div class="text-right log_btn">
+                                        <a routerLink="/changePassword" class="btn btn_theme">Change Password</a>
+                                    </div>
+                                    <!--  -->
+                                    <div class="cont_shd_frm">
+                                        <div class="row">
+                                            <div class="col-sm-10 offset-1">
+                                                <form [formGroup]="complexForm">
+                                                    <div class="text-center img_user">
+                                                        <div class="pos_rel pic_top">
+                                                            <span class="img_edtt pos_rel">
+                                                                <img *ngIf="!profileImage1 && !userData.profileImage" src="assets/img/profile2.jpg" class="img-fluid" id="prof_ch">
+                                                                <img *ngIf="userData.profileImage && !profileImage1" src="{{baseImage}}{{userData.profileImage}}" class="img-fluid" id="prof_ch">
+                                                                <img *ngIf="profileImage1" src="{{profileImage1}}" class="img-fluid" id="prof_ch">
+                                                                <span class="edt_inpt">
+                                                                    <i class="far fa-edit"></i>
+                                                                    <input type="file" (change)="onUpload($event)" name="" class="file_img">
+                                                                </span>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-12">
+                                                            <div class="form-group">
+                                                                <label>Organization Name</label>
+                                                                <input type="text" [(ngModel)]="userData.organization_name" [formControl]="complexForm.controls['organization_name']" class="form-control" value="Amazon">
+                                                                <p style="color: #E80358"  *ngIf="!complexForm.controls['organization_name'].valid  && ( complexForm.controls['organization_name'].touched)" >Please provide valid Organization Name</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12">
+                                                            <div class="form-group">
+                                                                <label>Email Address</label>
+                                                                <input type="text" [(ngModel)]="userData.email" [formControl]="complexForm.controls['email']" class="form-control" value="fred_james@gmail.com">
+                                                                 <p style="color: #E80358"  *ngIf="!complexForm.controls['email'].valid  && ( complexForm.controls['email'].touched)" >Please provide valid Email ID</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12">
+                                                            <div class="form-group">
+                                                                <label>Mobile Number</label>
+                                                                <input type="text"  maxLength="15" [readonly]="true" [(ngModel)]="userData.phone" [formControl]="complexForm.controls['phone']" class="form-control" value="fred_james@gmail.com">
+                                                                 <p style="color: #E80358"  *ngIf="!complexForm.controls['phone'].valid  && ( complexForm.controls['phone'].touched)" >Please provide valid phone number</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="text-right log_btn">
+                                                            <button  [disabled]="!complexForm.valid" class="btn btn_theme" (click)="editProfile()" >Update Information</button>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--  -->
+                                </div>
+                            </div>
+                            <!--  -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer section -->
+    <app-footer></app-footer>
+    <!-- Footer section -->
+</div>
+</div>

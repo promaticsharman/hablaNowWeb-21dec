@@ -1,0 +1,109 @@
+<div class="page-wrapper">
+	<!-- header index -->
+	<app-db-header></app-db-header>
+	<!-- header index -->
+
+  <div class="home_page_wrapper dashboard_wrapper">
+   <section class="db_sec_comon prof_sec">
+     <div class="custom_container">
+      <div class="wrap_dash_sec add_user_page"> <!-- page classes -->
+        <div class="row">
+          <div class="col-sm-3">
+            <div class="sidebar_wrap card_shd">
+              <!--  -->
+              <app-db-sidebar></app-db-sidebar>
+              <!--  -->
+            </div>
+          </div>
+          <div class="col-sm-9">
+            <div class="mainside_wrap">
+              <!--  -->
+              <div class="page_head">
+                <h4>Add New User</h4>
+                <h6>Lorem ipsum dolor sit amet, consectetur do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h6>
+              </div>
+              <div class="main_cntnt_dash">
+                <div class="card_shd cnt_skamper">
+               <!--    <div class="text-right log_btn">
+                    <a href="changePassword.php" class="btn btn_theme"><i class="fas fa-file-csv"></i> Download Sample File</a>
+                  </div> -->
+                  <div class="text-right log_btn">
+                    <!-- <a href="changePassword.php" class="btn btn_theme"><i class="fas fa-file-csv"></i> Import CSV</a> -->
+                  </div>
+                  <!--  -->
+                  <div class="cont_shd_frm">
+                    <div class="row">
+                      <div class="col-sm-10 offset-1">
+                        <form [formGroup]="complexForm">
+                          <div class="row">
+                            <div class="col-sm-6">
+                              <div class="form-group">
+                                <label>First Name</label>
+                                <input type="text" [(ngModel)]="reqData.first_name" [formControl]="complexForm.controls['first_name']" class="form-control" placeholder ="Enter First Name">
+                                <p style="color: #E80358"  *ngIf="!complexForm.controls['first_name'].valid  && ( complexForm.controls['first_name'].touched)" >Please provide valid First Name</p>
+                              </div>
+                            </div>
+                            <div class="col-sm-6">
+                              <div class="form-group">
+                                <label>Last Name</label>
+                                <input type="text" [(ngModel)]="reqData.last_name" [formControl]="complexForm.controls['last_name']" class="form-control" placeholder="Enter Last Name">
+                                <p style="color: #E80358"  *ngIf="!complexForm.controls['last_name'].valid  && ( complexForm.controls['last_name'].touched)" >Please provide valid Last Name</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-12">
+                              <div class="form-group">
+                                <label>Email Address</label>
+                                <input type="email" [(ngModel)]="reqData.email" [formControl]="complexForm.controls['email']" class="form-control" placeholder="Valid Email ID">
+                                <p style="color: #E80358"  *ngIf="!complexForm.controls['email'].valid  && ( complexForm.controls['email'].touched)" >Please provide valid Email Address</p>
+                              </div>
+                            </div>
+                            <div class="col-12">
+                              <div class="form-group">
+                                <label>Mobile Number</label>
+                                <input type="text" [(ngModel)]="reqData.mobile_number" [formControl]="complexForm.controls['mobile_number']" class="form-control" placeholder="Enter Mobile Number">
+                                <p style="color: #E80358"  *ngIf="!complexForm.controls['mobile_number'].valid  && ( complexForm.controls['mobile_number'].touched)" >Please provide valid Mobile Number</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="text-right log_btn">
+                              <button  class="btn btn_theme" [disabled]="!complexForm.valid" (click)="onSubmit()">Add User</button>
+                            </div>
+                          </div>
+						  <div class="form-group text-center">
+							  OR
+						  </div>
+						  <div class="form-group text-center">
+							   <input type="file" name="" id="fileupload" (change)="fileUpload($event)" value="">
+
+
+							   <button type="button" (click)="uploadMultipleUser()" name="button" class="btn btn-success custom_btn">Upload</button>
+							   <span> <a style="font-size: 10px;float: right;margin-right: -92px;margin-top: 68px;" class="cstm-a" download href="./../assets/sample-file/demo-habla-user.csv">Download Sample File</a> </span>
+						  </div>
+                        </form>
+                      </div>
+
+
+
+
+
+                    </div>
+                  </div>
+                  <!--  -->
+                </div>
+              </div>
+              <!--  -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer section -->
+  <app-footer></app-footer>
+  <!-- Footer section -->
+</div>
+</div>

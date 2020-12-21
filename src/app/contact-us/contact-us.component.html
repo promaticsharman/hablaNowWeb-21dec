@@ -1,0 +1,76 @@
+<div class="page-wrapper">
+	<!-- header index -->
+	<app-header></app-header>
+	<!-- header index -->
+
+	<div class="home_page_wrapper inner_pages_wrapper">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-lg-12 text-center col-cstm">
+					<h1 class=" hdr">Contact Us</h1>
+				</div>
+				<div class="col-lg-6 pd-l">
+					<div class="img-wrap">
+						<img src="https://www.flydubai.com/en/media/contact-us-2-710x473_tcm8-18919_w710.jpg">
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<div class="wrap-txt">
+						<div class="row">
+							<div class="col-lg-12 text-center">
+								<h2>Get in Touch</h2>
+								<br>
+							</div>
+							<div class="col-lg-12">
+								<div class="form-group">
+
+									<input type="text" class="form-control" placeholder="Name" [formControl]="complexForm.controls['name']" onkeypress="return /[a-z ]/i.test(event.key)">
+									<p style="color: #E80358"
+										*ngIf="!complexForm.controls['name'].valid  && ( complexForm.controls['name'].touched)">
+										Please provide name</p>
+								</div>
+							</div>
+							<div class="col-lg-12">
+								<div class="form-group">
+
+									<input type="text" class="form-control" placeholder="Email Address" [formControl]="complexForm.controls['email']" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
+									<p style="color: #E80358"
+										*ngIf="!complexForm.controls['email'].valid  && ( complexForm.controls['email'].touched)">
+										Please provide valid email</p>
+								</div>
+							</div>
+							<div class="col-lg-12">
+								<div class="form-group">
+
+									<input type="text" class="form-control" placeholder="Mobile Number" [formControl]="complexForm.controls['phone']"  oninput="this.value = this.value.replace(/[^0-9]/g, '');" pattern="[0-9]+" minlength="7" maxlength="15">
+									<p style="color: #E80358"
+										*ngIf="!complexForm.controls['phone'].valid  && ( complexForm.controls['phone'].touched)">
+										Please provide valid phone number</p>
+								</div>
+							</div>
+							<div class="col-lg-12">
+								<div class="form-group">
+
+									<textarea class="form-control" placeholder="Message" [formControl]="complexForm.controls['message']"></textarea>
+									<p style="color: #E80358"
+										*ngIf="!complexForm.controls['message'].valid  && ( complexForm.controls['message'].touched)">
+										Please provide message</p>
+								</div>
+							</div>
+							<div class="col-lg-12 text-center                               ">
+								<div><br></div>
+								<a href="javascript:void(0)" class="jj" (click)="submit()">Submit</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+
+		<!-- Footer section -->
+		<app-footer></app-footer>
+		<!-- Footer section -->
+	</div>
+</div>

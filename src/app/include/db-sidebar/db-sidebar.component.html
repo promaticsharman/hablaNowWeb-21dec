@@ -1,0 +1,21 @@
+<div class="pic_top pos_rel text-center">
+    <div class="pos_rel pic_pos">
+        <!-- <img *ngIf="userData.profileImage" src="{{userData.profileImage}}" class="img-fluid" alt=""> -->
+        <img *ngIf="!userData.profileImage" src="assets/img/profile2.jpg" class="img-fluid" alt="">
+        <img *ngIf="userData.profileImage" src="{{baseImage}}{{userData.profileImage}}" class="img-fluid" alt="">
+        <i data-toggle="tooltip" title="15 days remaining" class="fas fa-bolt"></i>
+    </div>
+    <h4 class="name_db">{{userData?.email}}</h4>
+    <span class="pln_typ">${{getSubscription?.no_of_credits}} /-{{getSubscription?.time_type}}</span>
+    <button href="javascript:void(0);" class=" btn upg_pl" routerLink="/mySubscription">${{getSubscription?.no_of_credits}}<sub>/{{getSubscription?.time_type}}</sub> Upgrade Plan</button>
+</div>
+<div class="side_menu">
+    <ul type="none" class="ul_side">
+        <li class="active"><a class="dropdown-item" routerLink="/myProfile">My Profle</a></li>
+        <li><a class="dropdown-item" routerLink="/addUser">Add Users</a></li>
+        <li><a class="dropdown-item" routerLink="/myUsers">My Users</a></li>
+        <li><a class="dropdown-item" routerLink="/mySubscription">My Subscription</a></li>
+        <li><a class="dropdown-item" routerLink="/credit_requests">Credit Request</a></li>
+        <li><button class="dropdown-item" (click)="logOut()" >Logout</button></li>
+    </ul>
+</div>

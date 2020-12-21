@@ -1,0 +1,83 @@
+<div class="page-wrapper">
+  <!-- header index -->
+  <app-db-header></app-db-header>
+  <!-- header index -->
+
+  <div class="home_page_wrapper dashboard_wrapper">
+    <section class="db_sec_comon prof_sec">
+      <div class="custom_container">
+        <div class="wrap_dash_sec add_user_page">
+          <!-- page classes -->
+          <div class="row">
+            <div class="col-sm-3">
+              <div class="sidebar_wrap card_shd">
+                <!--  -->
+                <app-db-sidebar></app-db-sidebar>
+                <!--  -->
+              </div>
+            </div>
+            <div class="col-sm-9">
+              <div class="mainside_wrap">
+                <!--  -->
+                <div class="page_head">
+                  <h4>My User</h4>
+
+                </div>
+                <div class="main_cntnt_dash">
+                  <div class="card_shd cnt_skamper">
+                    <!-- <div class="text-right log_btn">
+                      <a routerLink="/userDetails" class=""><i class="far fa-eye"></i> View Details</a>
+                    </div> -->
+                    <div class="cont_shd_frm">
+                      <div class="my_suers">
+
+                        <ul type="none" class="ul_peeps d-flex justify-content-between">
+
+                          <li class="d-flex flex-row align-items-center chabi"
+                            *ngFor="let data of getData | paginate: { itemsPerPage: 10, currentPage: p };let i= index ">
+                            <a [routerLink]="[ '/organization-user-detail',data?._id]" *ngIf="data">
+                            <span class="img_urs">
+                              <img *ngIf="data && !data.profile_picture" src="./assets/img/user.jpg" class="img-fluid">
+                              <img *ngIf="data && data.profile_picture" src="{{baseImage}}{{data.profile_picture}}"
+                                class="img-fluid">
+                            </span>
+                            <span>
+                              <h2>
+                                <!-- routerLink="/userCredits" -->
+                                {{data.first_name}} {{data.last_name}}</h2>
+                              <p>{{data.email}}</p>
+                            </span>
+                          </a>
+                          </li>
+
+                        </ul>
+                        <div class="">
+                          <pagination-controls (pageChange)="p = $event" autoHide="false" directionLinks="true">
+                          </pagination-controls>
+                          <!--       <ngb-pagination [collectionSize]="collectionSize" [pageSize] = "setPage" [(page)]="defaultPagination" [maxSize]="5" [rotate]="true" [ellipses]="false" [boundaryLinks]="true" (pageChange)="getUser()" ></ngb-pagination> -->
+                          <!--      <ngb-pagination [collectionSize]="70" [(page)]="page" [directionLinks]="false"></ngb-pagination> -->
+
+                        </div>
+                      </div>
+                    </div>
+                    <!--  -->
+
+
+
+
+
+                  </div>
+                </div>
+                <!--  -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer section -->
+    <app-footer></app-footer>
+    <!-- Footer section -->
+  </div>
+</div>

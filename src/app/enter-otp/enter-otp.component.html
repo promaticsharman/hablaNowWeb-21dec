@@ -1,0 +1,100 @@
+<div class="page-wrapper">
+	<!-- header index -->
+	<app-header></app-header>
+	<!-- header index -->
+
+    <div class="home_page_wrapper inner_pages_wrapper">
+    	<section class="register_sec user_mobile">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-8 offset-sm-2">
+                        <div class="wrp_white">
+                            <div class="login_head text-center">
+                                <h2>One-Time Password(OTP) Verification</h2>
+                                <p class="divider"><img src="assets/img/secdivider.png" class="img-fluid" alt="divider"></p>
+                            </div>
+                            <div class="form_head">
+                                <div class="text-center logo_login">
+                                    <img src="assets/img/logo.png" class="img-fluid">
+                                </div>
+                                <!-- <h5 class="text-center">Enter your Valid Mobile Number</h5> -->
+                                <div class="form_head text-center">
+                                    <h5>Enter the One-Time Password(OTP) sent on the registered mobile number</h5>
+                                    <p><strong>{{signUpData.phone}}</strong> <small class="edt_num cp" data-toggle="modal" data-target="#numb_mod"> <i class="far fa-edit"></i> Edit</small></p>
+                                    <h6>00:{{timeleft}}s</h6>
+                                    <!-- <ng-otp-input  (onInputChange)="onOtpChange($event)"  [config]="{length:5}"></ng-otp-input> -->
+                                    <form [formGroup]="complexForm">
+                                        <div class="col-sm-12">
+                                            <div class="clearfix text-center otp_fields">
+                                                <input type="text" [(ngModel)]="reqData.otp1" [formControl]="complexForm.controls['otp1']" class="form-control inpt_otp" minlength="1" maxlength="1" />
+                                                <input type="text" [(ngModel)]="reqData.otp2" [formControl]="complexForm.controls['otp2']" class="form-control inpt_otp" minlength="1" maxlength="1" />
+                                                <input type="text" [(ngModel)]="reqData.otp3" [formControl]="complexForm.controls['otp3']" class="form-control inpt_otp" minlength="1" maxlength="1" />
+                                                <input type="text" [(ngModel)]="reqData.otp4" [formControl]="complexForm.controls['otp4']" class="form-control inpt_otp" minlength="1" maxlength="1" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="text-center log_btn">
+                                                <p class="text-center resnd_otp">Haven't received OTP yet? <a href="javascript:void(0)" style="color: #0094de; font-size: 18px;" (click)="reSendOTP()"><b>Resend Code</b></a></p>
+                                                <button (click)="OTPCheck()" [disabled]="!complexForm.valid " class="btn btn_theme">Submit</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    	<!-- Footer section -->
+    	<app-footer></app-footer>
+    	<!-- Footer section -->
+    </div>
+</div>
+
+<!-- edit number modal -->
+<div class="modal fade modal_fit" id="numb_mod" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle">Change Mobile Number</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body text-center">
+        <img src="assets/img/chnum.png" class="img-fluid dast" />
+            <p class="text-center emmob">Enter Mobile Number</p>
+            <div class="from_reset">
+                <form [formGroup]="editForm">
+                    <div class="col-sm-12">
+                        <div class="clearfix text-left">
+                            <!--ngx-intl-tel-input [cssClass]="'form-control'"
+                                            [preferredCountries]="[CountryISO.UnitedStates, CountryISO.UnitedKingdom]"
+                                            [separateDialCode]="true"
+                                            [enableAutoCountrySelect]="false"
+                                            [enablePlaceholder]="true"
+                                            [searchCountryFlag]="true"
+                                            [searchCountryField]="[SearchCountryField.Iso2, SearchCountryField.Name]"
+                                            [selectFirstCountry]="false"
+                                            [selectedCountryISO]="country_name"
+                                            [maxLength]="10" [tooltipField]="TooltipLabel.Name"
+                                            [phoneValidation]="true"
+                                            id="my-input-id" [(ngModel)]="signUpData.phone"
+                                            [formControl]="complexForm.controls['phone']">
+                                        </ngx-intl-tel-input-->
+                            <input type="text" class="form-control" [(ngModel)]="signUpData.phone" [formControl]="editForm.controls['phone']" placeholder="Enter Phone Number" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" [disabled]="!editForm.valid" class="btn btn-primary" (click)="updatePhone()">Update Number</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- edit number modal -->

@@ -1,0 +1,98 @@
+<div class="page-wrapper">
+    <!-- header index -->
+    <app-db-header></app-db-header>
+    <!-- header index -->
+
+    <div class="home_page_wrapper dashboard_wrapper">
+        <section class="db_sec_comon prof_sec">
+            <div class="custom_container">
+                <div class="wrap_dash_sec subs_plans_page">
+                    <!-- page classes -->
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="sidebar_wrap card_shd">
+                                <!--  -->
+                                <app-db-sidebar></app-db-sidebar>
+                                <!--  -->
+                            </div>
+                        </div>
+
+                        <div class="col-sm-9">
+                            <div class="mainside_wrap">
+                                <!--  -->
+                            
+                                <div class="main_cntnt_dash">
+                                    <div class="card_shd">
+                                        <!--  -->
+                                        <div class="cnt_skamper blu_sttts" >
+                                            <div class="top_blu">
+                                                <ul class="ul_plc_act" type="none">
+                                                    <h3>My Active plan</h3>
+                                                    <li class="d-flex justify-content-between" *ngIf="getSubscription?.status === 'active'">
+                                                        <strong>Status</strong>
+                                                        <span class="text-success"><i class="fas fa-circle"></i>
+                                                            Active</span>
+                                                    </li>
+                                                    <li class="d-flex justify-content-between" *ngIf="getSubscription?.status !== 'active'">
+                                                        <strong>Status</strong>
+                                                        <span class="text-danger"><i class="fas fa-circle"></i>
+                                                            Expired</span>
+                                                    </li>
+                                                    <li class="d-flex justify-content-between" *ngIf="getSubscription?.Plan_name">
+                                                        <strong>Plan type</strong>
+                                                        <span><i>{{getPlan(getSubscription?.Plan_name)}}</i></span>
+                                                    </li>
+                                                    <li class="d-flex justify-content-between">
+                                                        <strong>Start Date</strong>
+                                                        <span><i>{{getSubscription?.start_date | date: 'dd/MM/yyyy'}}</i></span>
+                                                    </li>
+                                                    <li class="d-flex justify-content-between">
+                                                        <strong>End Date</strong>
+                                                        <span><i>{{getSubscription?.end_date | date: 'dd/MM/yyyy'}}</i></span>
+                                                    </li>
+                                                    <li class="d-flex justify-content-between">
+                                                        <strong>Credit Balance</strong>
+                                                        <span><i>{{getSubscription?.no_of_credits}}</i></span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <div class="packg_vl_prof cnt_skamper">
+                                            <div class="course_tables d-flex justify-content-around">
+                                                <div class="single_cors bg_sky" *ngFor="let item of getData | slice:0:3;let i=index">
+                                                    <div class="cors_head">
+                                                        <h2 class="cors_title">${{item?.subscription_price}}</h2>
+                                                        <p>{{item?.time}} {{item?.time_type}}</p>
+                                            
+                                                    </div>
+                                                    <div class="cors_body">
+                                                        <p>{{getPlan(item?.plan_name)}}</p>
+                                                        <ul class="cors_list" type="none">
+                                                            <li><i class="fas fa-check"></i>{{item?.unit_rate}}/ per unit</li>
+                                                            <li><i class="fas fa-check"></i>{{item?.total_credit}} Credit</li>
+                                                            <li><i class="fas fa-check"></i>{{item?.description}}</li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="cors_footer">
+                                                        <a href="javascript:;" class="btn btn_theme"
+                                                            data-animation="fadeInLeft" data-delay="900ms" (click)="pay(item?.subscription_price,item?._id)">Buy Plan <i
+                                                                class="fas fa-long-arrow-alt-right"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer section -->
+        <app-footer></app-footer>
+        <!-- Footer section -->
+    </div>
+</div>

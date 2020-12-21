@@ -1,0 +1,49 @@
+.instruction-ul {
+    float: left;
+    width: 100%;
+}
+.instruction-ul ul {
+    list-style-type: none;
+    display: inline-block;
+    float: left;
+    width: 100%;
+    padding-left: 15px;
+    margin: 10px 0;
+}
+.instruction-ul ul li {
+    float: left;
+    width: 50%;
+    position: relative;
+}
+.instruction-ul > ul > li.passed{
+    color: green;
+}
+.instruction-ul > ul > li.passed::after {
+    position: absolute;
+    top: -2px;
+    left: -18px;
+    // content: "\f00c";
+    // font-family: 'fontawesome';
+    color: green;
+}
+.div_error_lab {
+    margin-bottom: 10px;
+}
+.div_error_lab .passed {
+    font-size: 14px;
+    display: inline-block;
+    padding: 0 3px;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #414142;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: #414142;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: #414142;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: #414142;
+}

@@ -1,0 +1,137 @@
+<div class="page-wrapper">
+	<!-- header index -->
+	<app-db-header></app-db-header>
+	<!-- header index -->
+
+    <div class="home_page_wrapper dashboard_wrapper">
+    	<section class="db_sec_comon prof_sec">
+			<div class="custom_container">
+				<div class="wrap_dash_sec user_crdts_page"> <!-- page classes -->
+                    <div class="row"> 
+                        <div class="col-sm-3">
+                            <div class="sidebar_wrap card_shd">
+                                <!--  -->
+                                <app-db-sidebar></app-db-sidebar>
+                                <!--  -->
+                            </div>
+                        </div>
+                        <div class="col-sm-9">
+                            <div class="mainside_wrap">
+                                <!--  -->
+                                
+                                <div class="profile_box">
+                                    <div class="pro_img" *ngIf="!userData?.profile_picture">
+                                    <img src="https://ingenuity.siemens.com/content/uploads/2020/06/avatar-2061.jpg">
+                                    </div>
+                                    <div class="pro_img" *ngIf="userData?.profile_picture">
+                                    <img src="{{userImage}}{{userData?.profile_picture}}">
+                                    </div>
+                                    <div class="crdt_rev">
+                                                <div class="row">
+                                                    <!-- <div class="col-sm-4">
+                                                        <div class="bord_crd_rev">
+                                                            <h2>{{userData?.credits}}</h2>  
+                                                            <h3>Total Credits</h3>  
+                                                        </div>
+                                                    </div> -->
+                                                    <div class="col-sm-4">
+                                                        <div class="bord_crd_rev">
+                                                            <h2>{{userData?.credits}}</h2>  
+                                                            <h3>Balance Credits</h3>  
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <div class="bord_crd_rev">
+                                                            <h2>{{useCredits}}</h2>
+                                                            <h3>Credits Used</h3>  
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                    
+                                    <table class="tab-1">
+                                        <tr>
+                                            <td>
+                                                <h5 class="ft-mini"><b>Name: </b></h5>
+                                            </td>
+                                            <td>
+                                                <h5 class="ft-mini ft-normal">{{userData?.first_name}} {{userData?.last_name}}</h5>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <h5 class="ft-mini"><b>Email: </b></h5>
+                                            </td>
+                                            <td>
+                                                <h5 class="ft-mini ft-normal">{{userData?.email}}</h5>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <h5 class="ft-mini"><b>Phone: </b></h5>
+                                            </td>
+                                            <td>
+                                                <h5 class="ft-mini ft-normal">{{userData?.mobile_number}}
+                                               </h5>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <div>
+                                        <br>
+                                         <div class="text-right log_btn">
+                                            <a [routerLink]="['/transferCredits', userData?._id]"
+                                            routerLinkActive="router-link-active" class="btn btn_theme"><i class="fa fa-paper-plane"></i> Transfer Credits</a>
+                                        </div>
+                                        <br>
+                                    </div>
+                                </div>                                
+                                <div class="main_cntnt_dash">
+                                    <div class="card_shd cnt_skamper">
+                                       
+                                        <!--  -->
+                                        <div class="cont_shd_frm">
+                                         
+                                            <hr>
+                                            <div class="table_crdts">
+                                                <div class="table-responsive" *ngIf="userData?.credits_used_data?.length">
+                                                    <table class="table table-striped table-bordered dataTable">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>
+                                                                    SL.No
+                                                                </th>
+                                                                <th>Credit Used</th>
+                                                                <th>Date</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr *ngFor="let item of userData?.credits_used_data;let i=index">
+                                                                <td>
+                                                                   {{i+1}}
+                                                                </td>
+                                                                <td>{{item?.credit_transaction}}</td>
+                                                                <td>{{item?.createdAt | date:'dd/MM/yyyy'}}</td>
+                                                            </tr>
+                                                         
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--  -->
+                                    </div>
+                                </div>
+                                <!--  -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+			</div>
+		</section>
+
+    	<!-- Footer section -->
+    	<app-footer></app-footer>
+    	<!-- Footer section -->
+    </div>
+</div>

@@ -1,0 +1,34 @@
+.card_shd {
+    overflow: hidden;
+}
+.cors_list li{
+    text-align: left !important;
+    padding-left: 25px;
+    position: relative;
+    margin-left: 15px;
+}
+.cors_list li i{
+    position: absolute;
+    top: 5px;
+    left: 0;
+}
+
+.course_tables div.single_cors:nth-child(1) {
+ background-image:url('../../assets/img/basic.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+}
+.course_tables div.single_cors:nth-child(2) {
+  background-image:url('https://i.pinimg.com/originals/43/31/0f/43310f26604a5332e6545b8f65e02191.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+}
+.course_tables div.single_cors:nth-child(3) {
+background-image:url('https://media.istockphoto.com/photos/gold-shining-texture-background-picture-id1083243244?k=6&m=1083243244&s=170667a&w=0&h=jYQYimPqjG6l9rycRrMV3GiB-FGiGSFRYdymSPWDSxM=');
+background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+ 
+}

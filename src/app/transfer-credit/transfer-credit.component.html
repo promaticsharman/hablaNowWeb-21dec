@@ -1,0 +1,94 @@
+<div class="page-wrapper">
+  <!-- header index -->
+  <app-db-header></app-db-header>
+  <!-- header index -->
+
+  <div class="home_page_wrapper dashboard_wrapper">
+    <section class="db_sec_comon prof_sec">
+      <div class="custom_container">
+        <div class="wrap_dash_sec tran_crdt_page">
+          <!-- page classes -->
+          <div class="row">
+            <div class="col-sm-3">
+              <div class="sidebar_wrap card_shd">
+                <!--  -->
+                <app-db-sidebar></app-db-sidebar>
+                <!--  -->
+              </div>
+            </div>
+            <div class="col-sm-9">
+              <div class="mainside_wrap">
+                <!--  -->
+                <div class="page_head">
+                  <h4>Transfer Credits</h4>
+                  <h6>Lorem ipsum dolor sit amet, consectetur do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua.</h6>
+                </div>
+                <div class="main_cntnt_dash">
+                  <div class="card_shd cnt_skamper">
+                    <!--  -->
+                    <div class="cont_shd_frm">
+                      <div class="row">
+                        <div class="col-sm-10 offset-1">
+                          <form class="trans_form" method="" action="" id="">
+                            <div class="row">
+                              <label class="col-sm-4">Transfer From</label>
+                              <div class="col-sm-8">
+                                <div class="form-group">
+                                  <!-- {{userList |json}} -->
+                                  <!-- <select class="selectpicker form-control slc_pckr" [(ngModel)]="userData.id" >
+                                    <option disabled>Choose Account Name</option>
+                                    <option [value]="item.id"  *ngFor="let item of userList">
+                                      <span>{{item.first_name}} {{item.last_name}}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{item.credits}}
+                                    </option>
+                                  </select> -->
+                                  <select name="selectedQuantity" id="aantal" class="form-control" [(ngModel)]="selectedQuantity">
+                                    <option value="" disabled>Choose Account Name</option>
+                                    <option *ngFor="let option of userList" [value]="option.id" >{{option?.first_name}} {{option?.last_name}}&nbsp;&nbsp;(credits : {{option?.credits}})</option>
+                                </select>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <label class="col-sm-4">Transfer To</label>
+                              <div class="col-sm-8">
+                                <div class="form-group">
+                                  <input type="text" class="form-control" disabled placeholder="Transfer to " [ngModelOptions]="{standalone: true}" [(ngModel)]="userData.name">
+                            
+                                </div>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <label class="col-sm-4">Transfer Amount</label>
+                              <div class="col-sm-8">
+                                <div class="form-group">
+                                  <input type="text" class="form-control" [ngModelOptions]="{standalone: true}" [(ngModel)]="userData.amount" placeholder="Transfer Amount" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" pattern="[0-9]+">
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="form-group">
+                              <div class="text-right log_btn">
+                                <a href="javascript:;" class="btn btn_theme" [disabled]="!selectedQuantity || !userData.amount" (click)="creditTransfer()">Transfer</a>
+                              </div>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                    <!--  -->
+                  </div>
+                </div>
+                <!--  -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer section -->
+    <app-footer></app-footer>
+    <!-- Footer section -->
+  </div>
+</div>

@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>HablaNow</title>
+	<base href="./">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+	<link href="assets/css/animate.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="assets/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+	<link rel="stylesheet" type="text/css" href="./assets/css/font-awesome.css">
+	<link href="assets/css/animate.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="assets/css/owl.carousel.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="assets/css/owl.theme.default.css" rel="stylesheet" type="text/css" media="all" />
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/8.11.8/sweetalert2.css">
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/jszip-2.5.0/dt-1.10.20/b-1.6.1/b-html5-1.6.1/b-print-1.6.1/fh-3.1.6/r-2.2.3/datatables.min.css"/>
+	<link href="assets/css/bootstrap-select.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+
+
+	<link href="assets/css/style.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="assets/css/responsive-style.css" rel="stylesheet" type="text/css" media="all" />
+	<link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+	<app-root></app-root>
+
+	<script type="text/javascript" src="assets/js/jquery-2.2.3.min.js"></script>
+	<script type="text/javascript" src="assets/js/popper.js"></script> <!-- Necessary-JavaScript-File-For-Bootstrap -->
+	<script type="text/javascript" src="assets/js/bootstrap.js"></script> <!-- Necessary-JavaScript-File-For-Bootstrap -->
+
+	<script type="text/javascript" src="assets/js/owl.carousel.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/wow/0.1.12/wow.min.js"></script>
+	<script src="assets/js/moment.js"></script>
+	<script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+	<script src="assets/js/bootstrap-select.js"></script>
+
+	<!-- datatable -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+	<script type="text/javascript" src="https://cdn.datatables.net/v/bs4/jszip-2.5.0/dt-1.10.20/b-1.6.1/b-html5-1.6.1/b-print-1.6.1/fh-3.1.6/r-2.2.3/datatables.min.js"></script>
+	<!-- datatable -->
+
+	<script defer src="assets/js/wow.js"></script>
+
+
+	<script type="text/javascript">
+		$('.owl_header').owlCarousel({
+			loop:true,
+			margin:0,
+			dots:false,
+			nav:true,
+			mouseDrag:false,
+			autoplay:true,
+			animateOut: 'slideOutLeft',
+			responsive:{
+				0:{
+					items:1
+				},
+				600:{
+					items:1
+				},
+				1000:{
+					items:1
+				}
+			}
+		});
+
+	</script>
+	<script type="text/javascript">
+		$('.dataTable').DataTable();
+		$('.slc_pckr').selectpicker();
+		$('.selpckr').selectpicker();
+	</script>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('.dtpckr').datepicker({
+				uiLibrary: 'bootstrap4'
+			});
+		});
+
+		$(document).ready(function(){
+			$('.pop_alert').on('click', function () {
+				Swal.fire(
+					'Email Sent!',
+					'Thank You! for submitting your Email, please check your inbox for the Password Reset Link.',
+					'success'
+					)
+			})
+		});
+
+
+	</script>
+
+	<script type="text/javascript">
+		$('.file_img').on('change', function () {
+			var input = this;
+			var reader = new FileReader();
+			reader.onload = function(){
+				var dataURL = reader.result;
+				var output = document.getElementById('prof_ch');
+				output.src = dataURL;
+			};
+			reader.readAsDataURL(input.files[0]);
+		});
+	</script>
+
+	<script>
+		wow = new WOW({
+			animateClass: 'animated',
+			offset: 100,
+			callback: function(box) {
+				console.log("WOW: animating <" + box.tagName.toLowerCase() + ">")
+			}
+		});
+		wow.init();
+	</script>
+
+	<script>
+		$(window).on("scroll load" , function() {
+			if ($(this).scrollTop() > 100){
+				$('.header').addClass("fixed_hedr");
+				$('.logo_ch').find("img").attr('src', 'img/logo.png');
+			}
+			else {
+				$('.header').removeClass("fixed_hedr");
+				$('.logo_ch').find("img").attr('src', 'img/logow.png');
+				$('.innr_hedr .logo_ch').find("img").attr('src', 'img/logo.png');
+			}
+		});
+	</script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('.otp_fields input').keyup(function(){
+				var currleng = $(this).val().length;
+				var maxleng = $(this).attr("maxlength");
+				if(currleng == maxleng){
+					$(this).next().focus();
+				}
+			});
+			$('.otp_fields input').keydown(function(e) {
+				if ((e.which == 8 || e.which == 46) && $(this).val() =='') {
+					$(this).prev('input').focus();
+				}
+			});
+		});
+	</script>
+</body>
+</html>

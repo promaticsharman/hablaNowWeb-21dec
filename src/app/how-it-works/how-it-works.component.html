@@ -1,0 +1,36 @@
+<div class="page-wrapper">
+	<!-- header index -->
+	<app-header></app-header>
+	<!-- header index -->
+
+    <div class="home_page_wrapper inner_pages_wrapper">
+    	<div class="container-fluid">
+    		<div class="row">
+    			<div class="col-lg-12 text-center col-cstm">
+    				<h1 class=" hdr">How It Works</h1>
+    			</div>
+    			<div class="col-lg-6">
+	    			<div class="wrap-txt algn_justfy">
+	    				<div>
+
+
+	    				<p [innerHTML]="content.content"> </p>
+	    			</div>
+	    			</div>
+    			</div>
+	    		<div class="col-lg-6 pd-r">
+	    			<div class="img-wrap">
+	    				<!-- <img src="https://www.nextoniclaundry.com/img/how-works.png"> -->
+                        <img src="{{homePath}}{{content.image}}">
+	    			</div>
+	    		</div>
+    		</div>
+
+
+    	</div>
+
+    	<!-- Footer section -->
+    	<app-footer></app-footer>
+    	<!-- Footer section -->
+    </div>
+</div>

@@ -1,0 +1,157 @@
+<div class="page-wrapper">
+	<!-- header index -->
+	<app-header></app-header>
+	<!-- header index -->
+
+    <div class="home_page_wrapper">
+    	<section class="hero_img pos_rel">
+    		<div class="owl_header owl-carousel owl-theme">
+                <div class="item" *ngFor="let content of section1; let i=index">
+                    <div  *ngIf="i<=0;">
+                    <img src="{{homePath}}{{content.image}}" alt="images not found">
+                    <div class="cover">
+                        <div class="container">
+                            <div class="header-content">
+                                <div class="line"></div>
+                                <h2>{{content.content}}</h2>
+                                <h1>{{content.content2}}</h1>
+                                <h4>{{content.conten3}}</h4>
+                                <!-- <a class="btn_theme">Explore More</a> -->
+                            </div>
+                        </div>
+                    </div>
+                     </div>
+                    <div *ngIf="i>0;">
+                        <img src="{{homePath}}{{content.image}}" alt="images not found">
+                        <div class="cover">
+                            <div class="container">
+                                <div class="header-content">
+                                    <div class="line animated bounceInLeft"></div>
+                                    <h2>{{content.content}}</h2>
+                                    <h1>{{content.content2}}</h1>
+                                    <h4>{{content.conten3}}</h4>
+                                    <!-- <a class="btn_theme">Explore More</a> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>                        
+               <!--  <div class="item">
+                    <img src="https://magazin.ebay-kleinanzeigen.de/app/uploads/sites/5/2016/07/istock-515711910.jpg" alt="images not found">
+                    <div class="cover">
+                        <div class="container">
+                            <div class="header-content">
+                                <div class="line animated bounceInLeft"></div>
+                                <h2>Bite-size lessons</h2>
+                                <h1>Learn Spanish on the Go in your hectic life.</h1>
+                                <h4>Communication elevated. Conversations to get you to the next level.</h4>
+                                <a class="btn_theme">Explore More</a>
+                            </div>
+                        </div>
+                     </div>
+                </div>
+                <div class="item">
+                    <img src="https://images.pexels.com/photos/248021/pexels-photo-248021.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="images not found">
+                    <div class="cover">
+                        <div class="container">
+                            <div class="header-content">
+                                <div class="line animated bounceInLeft"></div>
+                                <h2>Like a snack, not a meal</h2>
+                                <h1>Practical learning for busy lives</h1>
+                                <h4>Live conversations at your convenience.</h4>
+                                <a class="btn_theme">Explore More</a>
+                            </div>
+                        </div>
+                     </div>
+                </div>    -->
+            </div>
+    	</section>
+
+    	<section class="abt_reg">
+    		<div class="section-full content-inner bg-white video-section">
+				<div class="custom_container">
+					<div class="section-content">
+						<div class="row">
+
+							<div class="col-sm-6">
+								<div class="video-bx">
+									<!-- <img src="https://api.ellequebec.com/app/uploads/2019/07/10-raisons-refuser-mere-facebook-GettyImages-768x512.jpg" class="img-fluid" alt="Signature">
+									<div class="video-play-icon">
+										<a href="" class="popup-youtube video"><i class="fa fa-play"></i></a>
+									</div> -->
+                                   
+                                    <div class="embed-responsive embed-responsive-4by3">
+                                        <!-- <video class="embed-responsive-item" src="{{section2?.video}}"></video> -->
+                                      <iframe class="embed-responsive-item" [src]='url'></iframe>
+                                    </div>
+								</div>
+							</div>
+							<div class="col-sm-6 align-self-center video-infobx format_btn">
+								<div class="content-bx1 sec_format algn_justfy" [innerHtml]="section2.content">
+									<!-- <div class="sec_heading">
+										<p>Because scheduling is harder than rolling an 'R'</p>
+	                                    <h2>Communication Elevated!</h2>
+	                                </div>
+
+									<p class="top_abt_lines">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a still in their infancy.</p> -->
+                                    
+								</div>
+									<a class="btn btn_theme" routerLink="/signup">Register Now</a>
+							</div>									
+							
+						</div>
+					</div>
+				</div>
+			</div>
+    	</section>
+
+    	<section class="contact_strip_img">
+            <img src="{{homePath}}{{section3.image}}" class="img-fluid">
+        </section>
+
+    	<section class="work_sec_how">
+            <div class="custom_container">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="mision_left sec_format algn_justfy" [innerHtml]="section4.content">
+                            <!-- <div class="sub_head">
+                                <p class="pos_rel">About Us</p>
+                                <h3>Mission Statement</h3>
+                            </div>
+                            <div class="meta_dean d-flex">
+                                <div class="meta_info">
+                                    <h5>“Practical learning for busy lives.” </h5>
+                                    <small>To learn Spanish in the form of real conversations with live teachers, without a schedule.</small>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="para_mision">
+                                    HablaNow lessons adapt to your learning style. Exercises are tailored to help you learn and review vocabulary effectively. The most popular language learning platform is now available for the classroom. Thousands of teachers are already using it to enhance their lessons. Everyone learns in different ways. For the first time in history, we can analyze how millions of people learn at once to create the most effective educational system possible and tailor it to each student. Our ultimate goal is to give everyone access to a private tutor experience through technology.
+                                </p>
+                                <hr class="mb-2">
+                                <p class="quote_dean"><i>“Lessons focus on a real-life goal — for instance, ordering at a restaurant. Learners develop the vocabulary and grammar needed to achieve that goal through lots of varied practice in reading, writing, listening, and speaking.”</i></p>
+                            </div> -->
+
+                            
+                            <!-- <div class="meta_dean">
+                                <div class="meta_pic"><img src="https://pixinvent.com/materialize-material-design-admin-template/app-assets/images/user/12.jpg" class="img-fluid"></div>
+                                <div class="meta_info">
+                                    <h5>Chiristina Hinges</h5>
+                                    <small>Founder & CEO - HablaNow</small>
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="col-sm-6 text-center">
+                        <div class="img_mision pos_rel">
+                            <img src="{{homePath}}{{section4.image}}" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    	<!-- Footer section -->
+    	<app-footer></app-footer>
+    	<!-- Footer section -->
+    </div>
+</div>

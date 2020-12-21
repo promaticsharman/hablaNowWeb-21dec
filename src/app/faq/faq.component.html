@@ -1,0 +1,63 @@
+<div class="page-wrapper">
+	<!-- header index -->
+	<app-header></app-header>
+	<!-- header index -->
+
+    <div class="home_page_wrapper inner_pages_wrapper">
+    	<div class="text-center col-cstm">
+    				<h1 class=" hdr">FAQ's</h1>
+    	</div>
+
+    	<div class="container-fluid bg-gray" id="accordion-style-1">
+	    <div class="container">
+		<section>
+			<div class="row">
+
+				<div class="col-10 mx-auto">
+					<div class="accordion" id="accordionExample">
+
+						
+						<div class="card" *ngFor="let ele of faqs; let i=index;">
+							
+							<div class="card-header" [attr.id]="'heading' + i">
+							  <!-- <h5 class="mb-0"> -->
+							     <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" attr.data-target="#collapse{{i}}" aria-expanded="true" aria-controls="collapseOne">
+							       <i class="fa fa-circle main"></i><i class="fa fa-angle-double-right mr-3"></i>
+								  </button>{{ ele.question }}
+								  <!-- <h3>{{i}}</h3> -->
+						      <!-- </h5> -->
+							</div>
+
+							<div  [attr.id]="'collapse' + i" class="collapse fade" aria-labelledby="headingOne" data-parent="#accordionExample">
+								<div class="card-body">
+									{{ ele.answer }}
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+</div>
+<!-- 
+<div class="card" *ngFor="let ele of faqs; let i=index">
+	<div class="card-header" [attr.id]="'heading' + i">
+		<button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" attr.data-target="#collapse{{i}}" aria-expanded="true" aria-controls="collapseOne">
+			<i class="fa fa-circle main"></i>
+			<i class="fa fa-angle-double-right mr-3"></i>
+		</button>						    
+		{{ ele.question }}
+	</div>
+	<div [attr.id]="'collapse' + i" class="collapse fade" aria-labelledby="headingOne" data-parent="#accordionExample">
+		<div class="card-body">
+			{{ ele.answer }}
+		</div>
+	</div>
+</div> -->
+    	<!-- Footer section -->
+    	<app-footer></app-footer>
+    	<!-- Footer section -->
+    </div>
+</div>
